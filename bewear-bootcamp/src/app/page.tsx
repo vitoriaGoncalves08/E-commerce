@@ -5,9 +5,10 @@ import CategorySelector from "@/components/common/category-selector";
 import Footer from "@/components/common/footer";
 import { Header } from "@/components/common/header";
 import ProductList from "@/components/common/product-list";
+import { getCategories } from "@/data/categories/get";
 import { getProductsWithVariants } from "@/data/produts/gets";
 import { getNewlyCreatedProducts } from "@/data/produts/gets";
-import { getCategories } from "@/data/categories/get";
+
 import CarouselPage from "./carousel/page";
 
 const Home = async () => {

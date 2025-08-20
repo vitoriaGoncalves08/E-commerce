@@ -1,6 +1,8 @@
 import "server-only";
-import { db } from "@/db";
+
 import { desc } from "drizzle-orm";
+
+import { db } from "@/db";
 import { productTable } from "@/db/schema";
 //DTO (DATA TRANSFER OBJECT)
 
