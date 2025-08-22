@@ -10,6 +10,8 @@ import { getProductsWithVariants } from "@/data/produts/gets";
 import { getNewlyCreatedProducts } from "@/data/produts/gets";
 
 import CarouselPage from "./carousel/page";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const Home = async () => {
   const [products, newlyCreatedProducts, categories] = await Promise.all([
@@ -21,6 +23,43 @@ const Home = async () => {
   return (
     <>
       <Header />
+      {/* Categorias - Desktop */}
+      <nav className="hidden md:flex justify-center py-3 m-4">
+            <ul className="flex gap-18">
+              {categories.map((category) => (
+                <li key={category.id}>
+                  <Link
+                    href={`/category/${category.slug}`}
+                    className="text-sm font-medium hover:text-primary transition-colors"
+                    prefetch={false}
+                    scroll={false}
+                  >
+                    {category.name.toUpperCase()}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+        </nav>
+
+      {/* Categorias - Mobile */}
+      <div className="md:hidden py-4 px-4">
+        <div className="relative">
+          <div className="flex space-x-3 overflow-x-auto pb-4 -mx-4 px-4">
+            {categories.map((category) => (
+              <Button
+                key={category.id}
+                asChild
+                variant="outline"
+                className="shrink-0 rounded-full text-sm font-medium"
+              >
+                <Link href={`/category/${category.slug}`}>
+                  {category.name}
+                </Link>
+              </Button>
+            ))}
+          </div>
+        </div>
+      </div>
       <div className="space-y-6">
         <div className="px-5">
           <Image
