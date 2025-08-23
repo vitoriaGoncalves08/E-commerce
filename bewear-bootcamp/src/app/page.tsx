@@ -23,54 +23,59 @@ const Home = async () => {
   return (
     <>
       <Header />
-      {/* Categorias - Desktop */}
-      <nav className="hidden md:flex justify-center py-3 m-4">
-            <ul className="flex gap-18">
-              {categories.map((category) => (
-                <li key={category.id}>
-                  <Link
-                    href={`/category/${category.slug}`}
-                    className="text-sm font-medium hover:text-primary transition-colors"
-                    prefetch={false}
-                    scroll={false}
-                  >
-                    {category.name.toUpperCase()}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-        </nav>
-
-      {/* Categorias - Mobile */}
-      <div className="md:hidden py-4 px-4">
-        <div className="relative">
-          <div className="flex space-x-3 overflow-x-auto pb-4 -mx-4 px-4">
+      
+      {/* Web View - Visible on md screens and up */}
+      <div className="hidden md:block">
+        {/* Categorias - Desktop */}
+        <nav className="flex justify-center py-3 m-4">
+          <ul className="flex gap-18">
             {categories.map((category) => (
-              <Button
-                key={category.id}
-                asChild
-                variant="outline"
-                className="shrink-0 rounded-full text-sm font-medium"
-              >
-                <Link href={`/category/${category.slug}`}>
-                  {category.name}
+              <li key={category.id}>
+                <Link
+                  href={`/category/${category.slug}`}
+                  className="text-sm font-medium hover:text-primary transition-colors"
+                  prefetch={false}
+                  scroll={false}
+                >
+                  {category.name.toUpperCase()}
                 </Link>
-              </Button>
+              </li>
             ))}
+          </ul>
+        </nav>
+        
+        {/* Web Banner */}
+        <div className="flex justify-center py-3 m-4">
+          <div className="px-5 w-full max-w-7xl">
+            <Image
+              src="/banner-01-web.svg"
+              alt="Leve uma vida com estilo"
+              height={0}
+              width={0}
+              sizes="100vw"
+              className="h-auto w-full"
+            />
           </div>
         </div>
       </div>
-      <div className="space-y-6">
-        <div className="px-5">
-          <Image
-            src="/banner-01.png"
-            alt="Leve uma vida com estilo"
-            height={0}
-            width={0}
-            sizes="100vw"
-            className="h-auto w-full"
-          />
+
+      {/* Mobile View - Visible on screens smaller than md */}
+      <div className="md:hidden">
+        <div className="flex justify-center py-3 px-4">
+          <div className="w-full">
+            <Image
+              src="/banner-01.png"
+              alt="Leve uma vida com estilo"
+              height={0}
+              width={0}
+              sizes="100vw"
+              className="h-auto w-full"
+            />
+          </div>
         </div>
+      </div>
+
+      <div className="space-y-6">
 
         <CarouselPage />
 
@@ -90,6 +95,46 @@ const Home = async () => {
             className="h-auto w-full"
           />
         </div>
+
+        {/* Web Only - Grid Layout */}
+        <div className="hidden md:block">
+          <div className="flex justify-center py-1 m-2 px-5">
+            <div className="grid grid-cols-3 gap-4 w-full max-w-7xl">
+              {/* Left Column - 1/3 width */}
+              <div className="flex flex-col gap-4">
+                <Image
+                  src="/tenisbanner1.svg"
+                  alt="Tênis esportivo"
+                  height={0}
+                  width={0}
+                  sizes="100vw"
+                  className="h-auto w-full"
+                />
+                <Image
+                  src="/tenisbanner2.svg"
+                  alt="Tênis casual"
+                  height={0}
+                  width={0}
+                  sizes="100vw"
+                  className="h-auto w-full"
+                />
+              </div>
+
+              {/* Right Column - 2/3 width */}
+              <div className="col-span-2">
+                <Image
+                  src="/banner02.png"
+                  alt="Coleção de tênis"
+                  height={0}
+                  width={0}
+                  sizes="100vw"
+                  className="h-auto w-full"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
 
         <ProductList products={newlyCreatedProducts} title="Novos produtos" />
         <Footer />

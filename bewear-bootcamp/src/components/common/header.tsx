@@ -149,7 +149,7 @@ export const Header = () => {
                   <MenuIcon className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left">
+              <SheetContent side="right">
                 <div className="py-6">
                   {session?.user ? (
                     <div className="space-y-4">

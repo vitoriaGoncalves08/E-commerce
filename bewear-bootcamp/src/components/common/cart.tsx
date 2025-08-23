@@ -28,8 +28,8 @@ export const Cart = () => {
         </Button>
       </SheetTrigger>
       <SheetContent>
-        <SheetHeader>
-          <SheetTitle>Carrinho</SheetTitle>
+        <SheetHeader className="text-left">
+          <SheetTitle className="text-lg font-semibold">Carrinho</SheetTitle>
         </SheetHeader>
 
         <div className="flex h-full flex-col px-5 pb-5">
