@@ -27,16 +27,33 @@ const CategoryPage = async ({ params }: CategoryPageProps) => {
   return (
     <>
       <Header />
-      <div className="space-y-6 px-5">
-        <h2 className="text-xl font-semibold">{category.name}</h2>
-        <div className="grid grid-cols-2 gap-4">
-          {products.map((product) => (
-            <ProductItem
-              key={product.id}
-              product={product}
-              textContainerClassName="max-w-full"
-            />
-          ))}
+      <div className="hidden md:block">      
+        <div className="space-y-6 px-5">
+          <h2 className="text-xl font-semibold">{category.name}</h2>
+          <div className="grid grid-cols-4 gap-4">
+            {products.map((product) => (
+              <ProductItem
+                key={product.id}
+                product={product}
+                textContainerClassName="max-w-full"
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="md:hidden">    
+        <div className="space-y-6 px-5">
+          <h2 className="text-xl font-semibold">{category.name}</h2>
+          <div className="grid grid-cols-2 gap-4">
+            {products.map((product) => (
+              <ProductItem
+                key={product.id}
+                product={product}
+                textContainerClassName="max-w-full"
+              />
+            ))}
+          </div>
         </div>
       </div>
     </>
