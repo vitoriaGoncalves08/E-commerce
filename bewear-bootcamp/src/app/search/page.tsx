@@ -1,11 +1,11 @@
-import { Suspense } from 'react';
 import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-
-import { SearchResults } from '@/components/search/search-results';
-import { Header } from '@/components/common/header';
-import { getCategories } from '@/data/categories/get';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { Suspense } from 'react';
+
+import { Header } from '@/components/common/header';
+import { SearchResults } from '@/components/search/search-results';
+import { getCategories } from '@/data/categories/get';
 
 interface SearchPageProps {
   searchParams: {

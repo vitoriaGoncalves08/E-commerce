@@ -1,7 +1,7 @@
 import { eq } from "drizzle-orm";
+import { CheckCircle, Circle, MapPin } from "lucide-react";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { CheckCircle, Circle, Package, CreditCard, MapPin } from "lucide-react";
 
 import Footer from "@/components/common/footer";
 import { Header } from "@/components/common/header";

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+
 import { getCategories } from "@/data/categories/get";
 
 export async function GET() {

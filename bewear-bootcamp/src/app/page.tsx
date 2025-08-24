@@ -1,5 +1,5 @@
-import { desc } from "drizzle-orm";
 import Image from "next/image";
+import Link from "next/link";
 
 import CategorySelector from "@/components/common/category-selector";
 import Footer from "@/components/common/footer";
@@ -10,8 +10,6 @@ import { getProductsWithVariants } from "@/data/produts/gets";
 import { getNewlyCreatedProducts } from "@/data/produts/gets";
 
 import CarouselPage from "./carousel/page";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 const Home = async () => {
   const [products, newlyCreatedProducts, categories] = await Promise.all([

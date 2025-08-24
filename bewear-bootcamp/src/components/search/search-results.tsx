@@ -1,9 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import ProductList from '../common/product-list';
 
 import { productTable, productVariantTable } from "@/db/schema";
+
+import ProductList from '../common/product-list';
 
 type Product = typeof productTable.$inferSelect & {
   variants: (typeof productVariantTable.$inferSelect)[];
