@@ -46,7 +46,7 @@ const Home = async () => {
         
         {/* Web Banner */}
         <div className="flex justify-center py-3 m-4">
-          <div className="px-5 w-full max-w-7xl">
+          <div className="px-5 w-full max-w-8xl">
             <Image
               src="/banner-01-web.svg"
               alt="Leve uma vida com estilo"
@@ -78,14 +78,17 @@ const Home = async () => {
       <div className="space-y-6">
 
         <CarouselPage />
-
-        <ProductList products={products} title="Mais vendidos" />
-
-        <div className="px-5">
+        <div className="hidden md:block">
+          <ProductList products={products} title="Mais vendidos" />
+        </div>
+        <div className="md:hidden px-5">
+          <ProductList products={products} title="Mais vendidos" />
+        </div>
+        <div className="md:hidden px-5">
           <CategorySelector categories={categories} />
         </div>
 
-        <div className="px-5">
+        <div className="md:hidden px-5">
           <Image
             src="/banner-02.png"
             alt="Leve uma vida com estilo"
@@ -97,9 +100,9 @@ const Home = async () => {
         </div>
 
         {/* Web Only - Grid Layout */}
-        <div className="hidden md:block">
+        <div className="hidden md:block mt-15">
           <div className="flex justify-center py-1 m-2 px-5">
-            <div className="grid grid-cols-3 gap-4 w-full max-w-7xl">
+            <div className="grid grid-cols-3 gap-4 w-full max-w-8xl">
               {/* Left Column - 1/3 width */}
               <div className="flex flex-col gap-4">
                 <Image
