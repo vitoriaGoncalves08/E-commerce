@@ -1,6 +1,6 @@
 # 🛍️ E-commerce Platform
 
-![Banner Image](bewear-bootcamp/public/banner-01.png)
+![Banner Image](./public/banner-01.png)
 
 A modern, full-featured e-commerce platform built with Next.js 13+ and the latest web technologies. This project showcases a complete online store with product listings, shopping cart, checkout process, and more.
 
